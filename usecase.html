@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Services Chatbot</title>
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .header {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid #ff9933;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #1a237e;
+        }
+        .header p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: #424242;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1a237e;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section h2 {
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+        .about, .services, .contact {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        footer {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+            border-top: 4px solid #138808;
+        }
+        #chat-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Government Services Chatbot</h1>
+        <p>Empowering Citizens with Access to Essential Services</p>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <div class="section about" id="about">
+        <h2>About Us</h2>
+        <p>
+            The Government Services Chatbot is a digital initiative designed to simplify your interaction with various 
+            local and national government services in India. Our goal is to provide a seamless experience for citizens 
+            seeking information on tax filing, license renewals, public services, and more.
+        </p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="section services" id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li><strong>Tax Filing:</strong> Get assistance with filing your taxes and stay updated on the latest tax policies.</li>
+            <li><strong>License Renewal:</strong> Renew your driver’s license, business permits, and other government-issued licenses with ease.</li>
+            <li><strong>Local Services Information:</strong> Access information on healthcare, education, transportation, and public services.</li>
+            <li><strong>Government Inquiries:</strong> Receive answers to your questions regarding various government services and policies.</li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>
+            For further assistance, please reach out to our support team:
+        </p>
+        <ul>
+            <li><strong>Contact Person:</strong> Kishore</li>
+            <li><strong>Contact Person:</strong> Mohammed Rafi</li>
+            <li><strong>Contact Person:</strong> Hashitha Devi</li>
+            <li><strong>Contact Person:</strong> Mariya Akshaya</li>
+            <li><strong>Contact Person:</strong> Jagadheesh</li>
+        </ul>
+        <p><strong>Email:</strong> support@govservices.com</p>
+        <p><strong>Phone:</strong> +91 12345 67890</p>
+    </div>
+
+    <!-- Chatbot Section -->
+    <div id="chat-container"></div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Government Services India. All rights reserved.</p>
+    </footer>
+
+    <!-- Load the Watson Assistant Web Chat -->
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "41b0575f-8696-46fd-a671-f68f1f9e026a", // The ID of this integration.
+    region: "eu-gb", // The region your integration is hosted in.
+    serviceInstanceID: "648a1abc-1b9c-4fa6-a0bb-ac4799630da7", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
